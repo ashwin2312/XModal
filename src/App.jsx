@@ -20,37 +20,39 @@ const customStyles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",    
+    justifyContent: "center",
   },
 };
 
-// Set the app element for accessibility
 Modal.setAppElement("#root");
 
 export default function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
   // Function to open the modal
   const openModal = () => {
     setModalIsOpen(true);
   };
 
   // Function to close the modal
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalIsOpen(false);
+  // };
+
   return (
     <div>
-      <h1>UserDetails Modal</h1>
+      <h1>User Details Modal</h1>
       <button onClick={openModal}>Open Form</button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
         style={customStyles}
         contentLabel="User Details Form"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
       >
         <ModalForm />
       </Modal>
-      {/* Render the ModalForm component */}
     </div>
   );
 }
