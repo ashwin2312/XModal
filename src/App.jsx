@@ -33,12 +33,7 @@ export default function App() {
   const openModal = () => {
     setModalIsOpen(true);
   };
-
-  // Function to close the modal
-  // const closeModal = () => {
-  //   setModalIsOpen(false);
-  // };
-
+ 
   return (
     <div>
       <h1>User Details Modal</h1>

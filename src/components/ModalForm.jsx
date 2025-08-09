@@ -48,6 +48,8 @@ export default function ModalForm() {
           <h4>Phone Number:</h4>
           <input
             type="number"
+            minLength={10}
+            maxLength={10}
             name=""
             id="phone"
             value={phone}
