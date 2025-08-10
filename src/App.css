@@ -1,12 +1,12 @@
 #root {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Better typography */
-  padding: 2rem; /* Adds breathing room */
-  background-color: #f9f9f9; /* Light background for contrast */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  padding: 2rem; 
+  background-color: #f9f9f9; 
 }
 
 button {
-  background-color: #007bff; /* More modern blue */
+  background-color: #007bff; 
   border-radius: 6px;
   padding: 10px 24px;
   color: white;
@@ -17,15 +17,9 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3; /* Hover effect */
+  background-color: #0056b3; 
 }
 
-button:focus {
-  outline: 2px solid #0056b3; /* Accessibility: visible focus */
-  outline-offset: 2px;
-}
-
-/* App.css */
 .modal-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -33,7 +27,7 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000; 
 }
 
 

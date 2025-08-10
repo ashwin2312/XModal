@@ -32,7 +32,6 @@ Modal.setAppElement("#root");
 export default function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  // Function to open the modal
   const openModal = () => {
     setModalIsOpen(true);
   };
