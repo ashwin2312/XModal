@@ -48,8 +48,8 @@ export default function App() {
         contentLabel="User Details Form"
         shouldCloseOnEsc={true}
         shouldCloseOnOverlayClick={true}
-        className="modal-content modal"
-        overlayClassName="modal-overlay"
+        className="modal-overlay"
+        // overlayClassName="modal-overlay"
       >
         <ModalForm />
       </Modal>
