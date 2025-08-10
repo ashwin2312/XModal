@@ -13,14 +13,22 @@ export default function ModalForm() {
     e.preventDefault();
     if (phone.length < 10) {
       alert("Invalid phone number. Please enter 10-digit phone number.");
+    } else {
+      setPhone("");
     }
     if (dob == today || dob > today) {
       alert("Invalid date of birth. Date of birth cannot be in the future.");
+    } else {
+      setDob("");
     }
+    if (name === "" || email === "") {
+      alert("Please fill in all fields.");
+      return;
+    }
+
     setName("");
     setEmail("");
-    setPhone("");
-    setDob("");
+    // setDob("");
   };
 
   return (
