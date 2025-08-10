@@ -10,3 +10,11 @@ button{
   cursor: pointer;
 
 }
+/* App.css */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  /* Any additional styling */
+}

@@ -20,12 +20,11 @@ const customStyles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",    
+    justifyContent: "center",
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
-  
 };
 
 Modal.setAppElement("#root");
@@ -37,7 +36,7 @@ export default function App() {
   const openModal = () => {
     setModalIsOpen(true);
   };
- 
+
   return (
     <div>
       <h1>User Details Modal</h1>
@@ -49,6 +48,8 @@ export default function App() {
         contentLabel="User Details Form"
         shouldCloseOnEsc={true}
         shouldCloseOnOverlayClick={true}
+        className="modal-content modal"
+        overlayClassName="modal-overlay"
       >
         <ModalForm />
       </Modal>
