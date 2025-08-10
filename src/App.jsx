@@ -20,8 +20,12 @@ const customStyles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center",    
   },
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  
 };
 
 Modal.setAppElement("#root");
