@@ -36,7 +36,7 @@ export default function ModalForm() {
       <div className="modal-content">
         <h2>Fill Details</h2>
         <form action="" onSubmit={handleSubmit}>
-          <h4>Username:</h4>
+          <h3>Username:</h3>
           <input
             type="text"
             id="username"
@@ -44,7 +44,7 @@ export default function ModalForm() {
             onChange={(e) => setName(e.target.value)}
             required
           />
-          <h4>Email Address:</h4>
+          <h3>Email Address:</h3>
           <input
             type="email"
             name=""
@@ -53,7 +53,7 @@ export default function ModalForm() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <h4>Phone Number:</h4>
+          <h3>Phone Number:</h3>
           <input
             type="number"
             minLength={10}
@@ -64,7 +64,7 @@ export default function ModalForm() {
             onChange={(e) => setPhone(e.target.value)}
             required
           />
-          <h4>Date of Birth:</h4>
+          <h3>Date of Birth:</h3>
           <input
             type="date"
             name=""
