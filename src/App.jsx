@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import ModalForm from "./components/ModalForm";
 import Modal from "react-modal";
@@ -31,6 +31,23 @@ Modal.setAppElement("#root");
 
 export default function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setModalIsOpen(false);
+      }
+    };
+
+    if (modalIsOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [modalIsOpen]);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -46,11 +63,13 @@ export default function App() {
         style={customStyles}
         contentLabel="User Details Form"
         shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
+        shouldCloseOnOverlayClick={false} // For custom close behavior
         className="modal-overlay"
         // overlayClassName="modal-overlay"
       >
-        <ModalForm />
+        <div ref={modalRef}>
+          <ModalForm />
+        </div>
       </Modal>
     </div>
   );
