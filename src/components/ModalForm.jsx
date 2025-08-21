@@ -9,18 +9,18 @@ export default function ModalForm() {
 
   const today = new Date().toISOString().split("T")[0];
 
+  console.log("phonelength::", phone.length);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (phone.length < 10) {
       alert("Invalid phone number. Please enter 10-digit phone number.");
-    } else {
-      setPhone("");
-    }
+      return;
+    } 
     if (dob == today || dob > today) {
       alert("Invalid date of birth. Date of birth cannot be in the future.");
-    } else {
-      setDob("");
-    }
+      return;
+    } 
     if (name === "" || email === "") {
       alert("Please fill in all fields.");
       return;
@@ -28,7 +28,8 @@ export default function ModalForm() {
 
     setName("");
     setEmail("");
-    // setDob("");
+    setPhone("");
+    setDob("");
   };
 
   return (
