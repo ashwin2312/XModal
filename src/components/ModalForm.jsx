@@ -14,11 +14,11 @@ export default function ModalForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (phone.length < 10) {
-      alert("Invalid phone number. Please enter 10-digit phone number.");
+      alert("Invalid phone number");
       return;
     } 
     if (dob == today || dob > today) {
-      alert("Invalid date of birth. Date of birth cannot be in the future.");
+      alert("Invalid date of birth");
       return;
     } 
     if (name === "" || email === "") {

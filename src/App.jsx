@@ -56,8 +56,8 @@ export default function App() {
     <div>
       <h1>User Details Modal</h1>
       <button onClick={openModal}>Open Form</button>
-      <div className="modal">
-        <div className="modal-content">
+      {/* <div className="modal"> */}
+        {/* <div className="modal-content"> */}
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
@@ -70,10 +70,14 @@ export default function App() {
           >
             {/* <div ref={modalRef}>
             </div> */}
-            <ModalForm />
+            <div className="modal">
+              <div className="modal-content">
+                <ModalForm />
+              </div>
+            </div>
           </Modal>
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }
