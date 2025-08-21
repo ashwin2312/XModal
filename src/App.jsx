@@ -66,7 +66,7 @@ export default function App() {
             shouldCloseOnEsc={true}
             shouldCloseOnOverlayClick={true} // For custom close behavior
             className="modal-overlay"
-            // overlayClassName="modal-overlay"
+            overlayClassName="modal-overlay"
           >
             {/* <div ref={modalRef}>
             </div> */}
