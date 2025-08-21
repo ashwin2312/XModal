@@ -32,53 +32,51 @@ export default function ModalForm() {
   };
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>Fill Details</h2>
-        <form action="" onSubmit={handleSubmit}>
-          <h3>Username:</h3>
-          <input
-            type="text"
-            id="username"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <h3>Email Address:</h3>
-          <input
-            type="email"
-            name=""
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <h3>Phone Number:</h3>
-          <input
-            type="number"
-            minLength={10}
-            maxLength={10}
-            name=""
-            id="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <h3>Date of Birth:</h3>
-          <input
-            type="date"
-            name=""
-            id="dob"
-            value={dob}
-            onChange={(e) => setDob(e.target.value)}
-            required
-            max={today} // Prevent future dates
-          />
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
-        </form>
-      </div>
+    <div className="modal-form">
+      <h2>Fill Details</h2>
+      <form action="" onSubmit={handleSubmit}>
+        <h3>Username:</h3>
+        <input
+          type="text"
+          id="username"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <h3>Email Address:</h3>
+        <input
+          type="email"
+          name=""
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <h3>Phone Number:</h3>
+        <input
+          type="number"
+          minLength={10}
+          maxLength={10}
+          name=""
+          id="phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        />
+        <h3>Date of Birth:</h3>
+        <input
+          type="date"
+          name=""
+          id="dob"
+          value={dob}
+          onChange={(e) => setDob(e.target.value)}
+          required
+          max={today} // Prevent future dates
+        />
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
+      </form>
     </div>
   );
 }

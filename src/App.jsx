@@ -13,9 +13,9 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     width: "600px",
     height: "auto",
-    // backgroundColor: "#f0f0f0",
+    backgroundColor: "#ffffff",
     borderRadius: "10px",
-    // padding: "20px",
+    padding: "20px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     display: "flex",
     flexDirection: "column",
@@ -23,7 +23,7 @@ const customStyles = {
     justifyContent: "center",
   },
   overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.444)",
   },
 };
 
@@ -31,46 +31,49 @@ Modal.setAppElement("#root");
 
 export default function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const modalRef = useRef(null);
+  // const modalRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setModalIsOpen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
+  //       setModalIsOpen(false);
+  //     }
+  //   };
 
-    if (modalIsOpen) {
-      document.addEventListener("click", handleClickOutside);
-    }
+  //   if (modalIsOpen) {
+  //     document.addEventListener("click", handleClickOutside);
+  //   }
 
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [modalIsOpen]);
+  //   return () => {
+  //     document.removeEventListener("click", handleClickOutside);
+  //   };
+  // }, [modalIsOpen]);
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
 
   return (
     <div>
       <h1>User Details Modal</h1>
       <button onClick={openModal}>Open Form</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        style={customStyles}
-        contentLabel="User Details Form"
-        shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={false} // For custom close behavior
-        className="modal-overlay"
-        // overlayClassName="modal-overlay"
-      >
-        <div ref={modalRef}>
-          <ModalForm />
+      <div className="modal">
+        <div className="modal-content">
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="User Details Form"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={true} // For custom close behavior
+            className="modal-overlay"
+            // overlayClassName="modal-overlay"
+          >
+            {/* <div ref={modalRef}>
+            </div> */}
+            <ModalForm />
+          </Modal>
         </div>
-      </Modal>
+      </div>
     </div>
   );
 }
