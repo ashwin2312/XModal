@@ -24,7 +24,7 @@ const customStyles = {
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.444)",
-    PointerEvents: "none",
+    // PointerEvents: "none",
   },
 };
 
@@ -37,7 +37,7 @@ export default function App() {
   const closeModal = () => setModalIsOpen(false);
 
   return (
-    <div id="root">
+    <div>
       <h1>User Details Modal</h1>
       <button onClick={openModal}>Open Form</button>
       <Modal
