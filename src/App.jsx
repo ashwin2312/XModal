@@ -24,6 +24,7 @@ const customStyles = {
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.444)",
+    PointerEvents: "none",
   },
 };
 
