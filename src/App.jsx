@@ -11,7 +11,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    width: "600px",
+    width: "auto",
     height: "auto",
     backgroundColor: "#ffffff",
     borderRadius: "10px",
@@ -53,31 +53,25 @@ export default function App() {
   const closeModal = () => setModalIsOpen(false);
 
   return (
-    <div>
+    <div id="root">
       <h1>User Details Modal</h1>
       <button onClick={openModal}>Open Form</button>
-      {/* <div className="modal"> */}
-        {/* <div className="modal-content"> */}
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="User Details Form"
-            shouldCloseOnEsc={true}
-            shouldCloseOnOverlayClick={true} // For custom close behavior
-            className="modal-overlay"
-            overlayClassName="modal-overlay"
-          >
-            {/* <div ref={modalRef}>
-            </div> */}
-            <div className="modal">
-              <div className="modal-content">
-                <ModalForm />
-              </div>
-            </div>
-          </Modal>
-        {/* </div> */}
-      {/* </div> */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="User Details Form"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        // className="modal-overlay"
+        overlayClassName="modal-overlay"
+      >
+        <div className="modal">
+          <div className="modal-content">
+            <ModalForm />
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }
