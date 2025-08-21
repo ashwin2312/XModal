@@ -31,23 +31,23 @@ Modal.setAppElement("#root");
 
 export default function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const modalRef = useRef(null);
+  const modalRef = useRef(null);
 
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (modalRef.current && !modalRef.current.contains(event.target)) {
-  //       setModalIsOpen(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setModalIsOpen(false);
+      }
+    };
 
-  //   if (modalIsOpen) {
-  //     document.addEventListener("click", handleClickOutside);
-  //   }
+    if (modalIsOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
 
-  //   return () => {
-  //     document.removeEventListener("click", handleClickOutside);
-  //   };
-  // }, [modalIsOpen]);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [modalIsOpen]);
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
@@ -62,13 +62,15 @@ export default function App() {
         style={customStyles}
         contentLabel="User Details Form"
         shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
+        shouldCloseOnOverlayClick={false}
         // className="modal-overlay"
         overlayClassName="modal-overlay"
       >
-        <div className="modal">
-          <div className="modal-content">
-            <ModalForm />
+        <div ref={modalRef}>
+          <div className="modal">
+            <div className="modal-content">
+              <ModalForm />
+            </div>
           </div>
         </div>
       </Modal>
